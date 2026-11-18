@@ -3,7 +3,7 @@ import {setPlayerNickname,doctorName} from './player-identity.js';
 import {PlayerSync} from './player-sync.js';
 import './player.css';
 const root=document.querySelector('#app');
-root.innerHTML=`<main class="entry-screen"><div class="entry-mark">S<span>+</span></div><p class="entry-kicker">SURGISPACE / 外科密室</p><h1>守住判断，<br>找到回家的路。</h1><p>投资序章 · 双病例诊疗 · 悬疑逃生</p><div role="status" id="entry-status">正在恢复游戏进度…</div><button id="entry-retry" hidden>重试连接</button><small>游戏流程经过简化，虚构病例不作为临床指导。</small></main>`;
+root.innerHTML=`<main class="entry-screen"><div class="entry-mark">S<span>+</span></div><p class="entry-kicker">SURGISPACE / 外科密室</p><h1>病灶暗藏迷局，<br>突围生死密室</h1><p>投资序章 · 双病例诊疗 · 悬疑逃生</p><div role="status" id="entry-status">正在恢复游戏进度…</div><button id="entry-retry" hidden>重试连接</button><small>游戏流程经过简化，虚构病例不作为临床指导。</small></main>`;
 const badge=document.createElement('button');badge.id='player-cloud';badge.hidden=true;document.body.append(badge);
 let kind='saved';
 const sync=new PlayerSync({onStatus:(text,state)=>{badge.textContent='☁ '+text;badge.dataset.state=state;kind=state;}});
@@ -11,7 +11,7 @@ function download(snapshot){const a=document.createElement('a'),url=URL.createOb
 badge.onclick=()=>{
  if(document.querySelector('#player-dialog'))return;
  const d=document.createElement('dialog');d.id='player-dialog';d.className='player-dialog';
- d.innerHTML=`<button id="player-close" aria-label="关闭">×</button><p class="entry-kicker">PLAYER PROFILE</p><h2>玩家与游戏进度</h2><p id="player-name"></p><p>无需登录。两病例、剧情位置、昵称与答题记录自动保存。同一浏览器再次访问可继续；换设备或清理浏览器数据前请导出备份，再在新设备导入。</p><p id="player-result" role="status"></p><button id="player-retry">重试保存</button><button id="player-export">导出本机备份</button><button id="player-remote">读取云端进度</button><button id="player-logout">保存并返回首页</button>`;
+ d.innerHTML=`<button id="player-close" aria-label="关闭">×</button><p class="entry-kicker">PLAYER PROFILE</p><h2>玩家与游戏进度</h2><p id="player-name"></p><p>两病例、剧情位置、昵称与答题记录自动保存。同一浏览器再次访问可继续；换设备或清理浏览器数据前请导出备份，再在新设备导入。</p><p id="player-result" role="status"></p><button id="player-retry">重试保存</button><button id="player-export">导出本机备份</button><button id="player-remote">读取云端进度</button><button id="player-logout">保存并返回首页</button>`;
  document.body.append(d);d.querySelector('#player-name').textContent=doctorName()+' · '+sync.user.name;d.querySelector('#player-result').textContent=badge.textContent;
  d.querySelector('#player-close').onclick=()=>{d.close();d.remove();};d.oncancel=()=>d.remove();
  d.querySelector('#player-retry').onclick=async()=>{await sync.flush();d.querySelector('#player-result').textContent=badge.textContent;};

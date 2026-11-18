@@ -96,7 +96,7 @@ export function createCampaignStage(canvas,{mode='office',patient='lin',onPick=(
  canvas.addEventListener('pointerup',pick);
  function setup(){
   desk.visible=['office','clinic'].includes(mode);doctor.g.visible=false;huang.g.visible=mode==='clinic'||mode==='airport';police.g.visible=mode==='rescue';zhou.g.visible=['clinic','airport','car','rescue'].includes(mode);chair.visible=mode==='clinic';bed.visible=['or','appendix'].includes(mode);car.visible=['car','airport','rescue'].includes(mode);wheelchair.visible=mode==='rescue';
-  if(mode==='airport'){desk.visible=false;label('澜湾 到达 ARRIVALS',[0,2.4,-1.8]);zhou.g.position.set(.65,0,-1);}
+  if(mode==='airport'){desk.visible=false;label('园区 到达 ARRIVALS',[0,2.4,-1.8]);zhou.g.position.set(.65,0,-1);}
   if(mode==='car'){camera.position.set(.2,1.5,1.1);target.set(.5,1.2,-.7);}
   if(mode==='appendix')camera.position.set(1.8,2.6,2.4);if(mode==='office'){camera.position.set(.5,1.75,2.2);target.set(.1,1.0,-.2);}
   if(mode==='clinic'&&patient==='zhou')huang.g.visible=false;
