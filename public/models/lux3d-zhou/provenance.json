@@ -1,0 +1,38 @@
+{
+  "provider": "Aholo Lux3D",
+  "character": "周先生",
+  "age": 32,
+  "sex": "male",
+  "version": "G1",
+  "newGenerationTasks": 2,
+  "models": {
+    "ill": {
+      "file": "zhou-ill.glb",
+      "taskId": 8369311,
+      "inputMethod": "image-to-3D",
+      "faceCountRequested": 100000,
+      "triangles": 91756,
+      "sha256": "34a6f2b0379abe6d9c4df0e61ad8b2fa662cae00f1145fb98ea13c533863e9b6",
+      "bytes": 13793608,
+      "referenceSha256": "ab585e927acc3a6ee58e74d28252cfc8bca01fdee4e4709967c0de192aeed5e1",
+      "conceptSha256": "e7004b463ea8375212d07e62fc69cf7d140110f9d33a0c87146a0ad5d8c20f53",
+      "pose": "Seated, right hand guarding right lower abdomen",
+      "furniture": "Character only; chair/wheelchair supplied separately by game scenes",
+      "skinCount": 0
+    },
+    "recovery": {
+      "file": "zhou-recovery.glb",
+      "taskId": 8369314,
+      "inputMethod": "image-to-3D",
+      "faceCountRequested": 100000,
+      "triangles": 93078,
+      "sha256": "e522ff04df600cfc036a50e622089d1c8d8779feb4dc0e0a10a7ce247c249d86",
+      "bytes": 14590772,
+      "referenceSha256": "2e9dd979f0748d976b6d01ced6278dc00a6808881c38946758b40c0f7fd3c94a",
+      "conceptSha256": "f5665ccc53c0f14cc98b1b109c0eb03033625bd298e77d394efdf9542522e93c",
+      "pose": "Seated, right hand gesturing to follow",
+      "furniture": "Character only; chair/wheelchair supplied separately by game scenes",
+      "skinCount": 0
+    }
+  }
+}
