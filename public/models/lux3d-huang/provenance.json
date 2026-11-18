@@ -1,0 +1,14 @@
+{
+  "provider": "Aholo Lux3D",
+  "character": "小黄",
+  "age": 25,
+  "version": "G1",
+  "faceCountRequested": 60000,
+  "modelTaskId": 8366027,
+  "rigTaskId": 8366285,
+  "sourceSha256": "89e41179e874e45e8e0adcd10945cdefcf1a9aafe5e3e353555b949684b4145f",
+  "outputSha256": "7a9d3d751917282d1258ccf36e50dfbb07844990a618ae2bb035b4576240e75c",
+  "referenceSha256": "53793c429adfce9e9681dbc15a2c9a01f3d04627b513a25ea90237f6209f3ee3",
+  "conceptSha256": "6dcd2870f2af9eeddfef66679d05b41f81b186dad3e8af0cbfc80f715baf9c1f",
+  "runtime": "Local GLB with embedded PBR textures and humanoid skeleton; normalized to 1.70 game units at load time."
+}
