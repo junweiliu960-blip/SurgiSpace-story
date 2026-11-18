@@ -35,7 +35,8 @@ export function placePhotoObject(object,uv,height,camera,canvas,{sourceHeight=1,
 // the floor in front of that chair. Both points scale with the room artwork.
 export function seatClinicPatient(object,camera,canvas){
  object.rotation.y=-.80;
- placePhotoObject(object,[.655,.90],.55,camera,canvas,{sourceHeight:1.58});
+ placePhotoObject(object,[.635,.90],.55,camera,canvas,{sourceHeight:1.58});
+ object.scale.x*=.84;
 }
 export function fitCameraToPhoto(camera,canvas,a,b,uvA,uvB){
  const w=canvas.clientWidth||1,h=canvas.clientHeight||1,r=photoRect(w,h);
