@@ -1,0 +1,9 @@
+{
+  "source": "Existing user-authorized Lux3D assets",
+  "tasks": {
+    "renal-artery": 4635469,
+    "renal-vein": 4635472
+  },
+  "processing": "Retain generated branch geometry; remove unused texture channels and use sampled Lux3D material colour for lower memory usage",
+  "newPaidTasks": 0
+}

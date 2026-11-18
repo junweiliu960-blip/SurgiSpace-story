@@ -1,0 +1,15 @@
+.viewport[style*="--room-image"]{background-image:var(--room-image)!important}
+.viewport[style*="--room-image"],.campaign-stage.stage-office,.campaign-stage.stage-clinic,.campaign-stage.stage-or,.campaign-stage.stage-appendix{background-size:contain!important;background-position:center top!important;background-repeat:no-repeat!important;background-color:#102b2a!important;background-attachment:scroll!important}
+.campaign-stage.stage-office,.campaign-stage.stage-clinic{background-image:url('/images/backgrounds/clinic-retrofuture.png')!important}
+.campaign-stage.stage-or,.campaign-stage.stage-appendix{background-image:url('/images/backgrounds/or-retrofuture.png')!important}
+.photo-hotspot,.photo-monitor{position:absolute!important;transform:none!important;background:transparent!important;border:1px solid transparent!important;border-radius:4px!important;padding:0!important;color:#f3ead0;cursor:pointer;z-index:2;overflow:visible!important;box-shadow:none}
+.photo-hotspot:hover,.photo-monitor:hover,.photo-hotspot:focus-visible,.photo-monitor:focus-visible{border-color:#e2c58c!important;box-shadow:0 0 0 3px #d7bf7c33;background:#d3c0890b!important;outline:none}
+.photo-hotspot span,.photo-monitor span{position:absolute;left:0;bottom:100%;width:max-content;max-width:200px;font-size:11px;background:#173e37ee;padding:6px 10px;border:1px solid #b59c6b66;border-radius:4px;opacity:0;pointer-events:none}
+.photo-hotspot:hover span,.photo-monitor:hover span,.photo-hotspot:focus-visible span,.photo-monitor:focus-visible span{opacity:1}
+.campaign-stage.stage-appendix:not(.photo-detail)>canvas,.campaign-stage.stage-or:not(.photo-detail)>canvas{inset:0!important;width:100%!important;height:100%!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+.campaign-stage.photo-detail>canvas{inset:110px auto 120px 24px!important;width:calc(100% - 700px)!important;height:calc(100% - 230px)!important;background:#173f3c!important;border:1px solid #8da997!important;border-radius:14px!important}
+.viewport.photo-detail #scene{background:#102b2a;outline:1px solid #78988b;outline-offset:-1px}
+@media(max-width:800px){.campaign-stage.cinematic-set>canvas,.campaign-stage.stage-appendix:not(.photo-detail)>canvas,.campaign-stage.stage-or:not(.photo-detail)>canvas{height:360px!important}.campaign-stage.photo-detail>canvas{top:12px!important;left:12px!important;width:calc(100% - 24px)!important;height:300px!important}.photo-hotspot span,.photo-monitor span{font-size:10px}.photo-hotspot{min-height:24px}}
+
+.clinic-layout .viewport>[data-photo-target='bed'],.clinic-layout .viewport>[data-photo-target='monitor'],.clinic-layout .viewport>[data-photo-target='instruments'],.workspace:not(.clinic-layout) .viewport>[data-photo-target='computer'],.workspace:not(.clinic-layout) .viewport>[data-photo-target='folder'],.viewport.photo-detail>[data-photo-target],.campaign-stage.photo-detail>[data-photo-target]{display:none!important}
+#computer-panel{border:1px solid #91a58e!important;border-radius:8px!important;box-shadow:0 15px 40px #0007!important}

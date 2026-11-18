@@ -1,0 +1,53 @@
+{
+  "field": {
+    "taskId": 8205876,
+    "provider": "Aholo Lux3D",
+    "version": "G1",
+    "consumedCredits": 20,
+    "sourceSha256": "597e266ad2ac32f988042eba42488809e413ced07a3c37d50eac84a099ad33ef",
+    "outputSha256": "010d3e297950c06bd0c07b3f9e9627606502798d59376dc2e06480676c880bfd",
+    "normalization": {
+      "originBlender": [
+        -0.0004042983055114746,
+        -0.0009166896343231201,
+        -0.0002434253692626953
+      ],
+      "scale": 0.9970746040160604
+    },
+    "prompt": "A single isolated 3D medical game environment asset: the inner peritoneal working space of the adult right lower abdomen as viewed with a laparoscopic camera. A shallow concave asymmetric bowl of warm moist salmon-pink parietal peritoneal tissue with soft organic folds and a few subtle yellow fatty tissue patches around its perimeter. Broad empty recessed central working area for a separately supplied ileocecal organ model. NO cecum, NO appendix, NO ileum, NO internal organs in the central area, NO visible outside skin, NO large vessels, NO active bleeding. The bowl has a softly irregular organic rim and seamless back, no artificial container, no plate, no pedestal. The opening faces front towards the viewer. Realistic fine PBR tissue, subtle gloss, deep slightly darker edges, medically restrained. No text, UI, people, bed, room, tools, implants, clips, gauze, bloody fluid or gore. One continuous mesh suitable as a backdrop to an existing teaching organ model, not a full patient reconstruction."
+  },
+  "specimen-bag": {
+    "taskId": 8205880,
+    "provider": "Aholo Lux3D",
+    "version": "G1",
+    "consumedCredits": 20,
+    "sourceSha256": "9d782f34824d177974e79e7433cc4988fbadee8476425c2c4a1af93cd89a634b",
+    "outputSha256": "685c8a69123f9dd4c13808773d2d1ea69c1e1d6c75f34b11b6d27012146083fe",
+    "normalization": {
+      "originBlender": [
+        -0.002058088779449463,
+        4.556775093078613e-05,
+        -0.00016301870346069336
+      ],
+      "scale": 1.4942249931688871
+    },
+    "prompt": "One isolated EMPTY laparoscopic specimen retrieval bag for an educational appendectomy game. A thin flexible translucent milky-clear polyurethane pouch with a wide circular open mouth supported by a fine smooth dark teal flexible rim, an elongated softly rounded bag body hanging below the opening, visible subtle folded film and sealed bottom. The mouth is clearly OPEN and large enough to receive a small narrow appendix specimen; do not close or flatten the pouch. A short fine drawstring loop attached to the rim. Single object, upright, the opening is at the top and tilted slightly toward the viewer, bag hangs downward. Realistic polished PBR medical product model, clean sterile appearance. No metal delivery tube, no handle or trocar, NO organ inside, no tissue, no blood, no text, no logo, no table, no room, no packaging or pedestal. Keep the plastic thin and smooth and preserve the open hollow inner cavity."
+  },
+  "grasper": {
+    "taskId": 8206264,
+    "provider": "Aholo Lux3D",
+    "version": "G1",
+    "consumedCredits": 20,
+    "sourceSha256": "b947bfe328a1ce006effa58656edb024a36b8051f7ede51c42a72662f1ef8486",
+    "outputSha256": "2a6a2ad772b77ed8121892812649eec7df4708b6f08203e4e1cde346112cad83",
+    "normalization": {
+      "originBlender": [
+        7.484853267669678e-05,
+        4.941597580909729e-05,
+        0.5019620656967163
+      ],
+      "scale": 1.793045505456266
+    },
+    "prompt": "One isolated complete straight laparoscopic atraumatic fenestrated grasping forceps, educational medical game asset. A long slender straight cylindrical brushed stainless steel shaft; at the distal tip a small symmetric pair of blunt rounded fenestrated jaws with two oblong openings, jaws slightly open to form a shallow V. Small realistic hinge joint, no sharp cutting blades. At the proximal end a compact dark charcoal ergonomic two-loop handle with a modest trigger. Shaft is several times longer than the handle and jaws. Instrument axis is vertical, tip and jaws at the TOP, handle at the BOTTOM, entire instrument in frame. Realistic refined PBR metal, clean unbranded medical tool. One tool only, no stand, no tissue, no organ, no hand, no body, no cable, no room, no operating table, no text or logo."
+  }
+}

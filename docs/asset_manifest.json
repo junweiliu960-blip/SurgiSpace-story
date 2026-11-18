@@ -1,0 +1,119 @@
+{
+  "version": "2.0.0",
+  "files": [
+    {
+      "path": "public/models/bed.glb",
+      "bytes": 15819916,
+      "sha256": "41cf9514c83b1c93519ba6f6d39fbfbb27c60e650c4120ff8ba9b62087179765",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/bodyparts.bin",
+      "bytes": 16714632,
+      "sha256": "62162c41adec6141dfaaeef0bb820c226e74592dc985589750f4cdac2aab3e66",
+      "source": "BodyParts3D CC BY 4.0"
+    },
+    {
+      "path": "public/models/bodyparts.json",
+      "bytes": 279954,
+      "sha256": "2e0bfa661b35d6a6bc5e3adef4dc6f5d08935e0e0dcd1fc72ef969fea218ebe2",
+      "source": "BodyParts3D CC BY 4.0"
+    },
+    {
+      "path": "public/models/hra-kidney-right.glb",
+      "bytes": 1546868,
+      "sha256": "ff9821e0b8fb7fa6174a07b9cafb9f98bb25feca34ddc0e802beeefb24cd3779",
+      "source": "HRA CC BY 4.0"
+    },
+    {
+      "path": "public/models/hra-ureter-right.glb",
+      "bytes": 540712,
+      "sha256": "be2d0331aed637f2f291a342ee760dda41d3418a9e2e9a4070e1e845e3b3e581",
+      "source": "HRA CC BY 4.0"
+    },
+    {
+      "path": "public/models/instruments/adson-forceps.glb",
+      "bytes": 1758352,
+      "sha256": "a6a1f83dce4289c9c9769ed90cf95ad7197efa2549f36e41b5df2447614ca812",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/debakey-forceps.glb",
+      "bytes": 1792968,
+      "sha256": "82d732b686472632231f588144b955d65aed566159f15d1d6655cfb520fabb30",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/kelly-hemostat.glb",
+      "bytes": 1789640,
+      "sha256": "6c2a6c9c70f7b92c2e18ff1a0f5cdd0b250337f3ae43be1680006baa946836a5",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/kocher-clamp.glb",
+      "bytes": 546608,
+      "sha256": "c86cb3cbcb0e9f75d9c25304b1b4cfd840a891322e185c19e85a972f7ea1ff06",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/langenbeck.glb",
+      "bytes": 63456,
+      "sha256": "eee79c02680b5c92f9ae86b51f8b92ba8154702e45c64681b3e38bc5ccd133c3",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/mayo-hegar.glb",
+      "bytes": 304788,
+      "sha256": "06f59cd8fc8ffdd32646f659b4d673864564d12dcd9f819a2d6d582f9d729e02",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/mayo-scissors.glb",
+      "bytes": 1936648,
+      "sha256": "8946566260e07efa3d593fee332881f2a4fe91d95159827e996367718ecacf60",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/metzenbaum-scissors.glb",
+      "bytes": 1877704,
+      "sha256": "3c8664bb94e3feb59d56f207290f9fd7406ac85b266aa4baf65499eb08d39a4e",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/mosquito-hemostat.glb",
+      "bytes": 279688,
+      "sha256": "a9b837dd1bfa6a6dc88c466f76b8e591182755bfac9e59de2b6878ef0f30c180",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/nephroscope.glb",
+      "bytes": 34140,
+      "sha256": "a9bb78bf864c7ef6d745aadbe096673eb3d3aa44e1cc12d8b1f20e58fd17a8ea",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/resectoscope.glb",
+      "bytes": 61932,
+      "sha256": "236cf35ddec52132b1c73e1dc24481f7726db58cc437ce29f2dd191345cea85b",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/scalpel-blade.glb",
+      "bytes": 1955708,
+      "sha256": "2dce8a87128bcb32199e1b257907279a25402d15b2a07747290d38692f42b78c",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/scalpel-handle.glb",
+      "bytes": 1728908,
+      "sha256": "024d9e9a999f95842e4e5f8967eb8926bbb954cca04d966d76002c578a1c7894",
+      "source": "Existing project Lux3D and authored asset"
+    },
+    {
+      "path": "public/models/instruments/suction-tip.glb",
+      "bytes": 1721544,
+      "sha256": "b3b531b44f89286da86c1c7670914f7e70e66257a5d4c6eda4de5b616d0adf30",
+      "source": "Existing project Lux3D and authored asset"
+    }
+  ]
+}

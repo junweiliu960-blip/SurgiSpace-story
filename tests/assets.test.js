@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';
+test('BodyParts3D binary is complete and preserves right kidney reference',()=>{const m=JSON.parse(fs.readFileSync('public/models/bodyparts.json'));const b=fs.readFileSync('public/models/bodyparts.bin');assert.equal(b.length,m.bytes);assert.equal(crypto.createHash('sha256').update(b).digest('hex'),m.sha256);assert(m.parts.some(p=>p.id==='FJ2810'));assert(m.parts.some(p=>p.id==='FJ3147'));for(const p of m.parts){assert(p.positions+p.vertexCount*12<=b.length);assert(p.indices+p.indexCount*4<=b.length);}});
+test('HRA kidney and ureter are actual parseable multi-structure GLB files',()=>{for(const f of ['hra-kidney-right.glb','hra-ureter-right.glb']){const b=fs.readFileSync('public/models/'+f);assert.equal(b.toString('ascii',0,4),'glTF');assert.equal(b.readUInt32LE(8),b.length);const j=JSON.parse(b.toString('utf8',20,20+b.readUInt32LE(12)));assert(j.meshes.length>1);assert(j.nodes.some(n=>/kidney|ureter|calyx|papilla/i.test(n.name||'')));}});
+test('startup anatomy pack is a lossless subset and leaves full anatomy intact',()=>{
+ const original=JSON.parse(fs.readFileSync('public/models/bodyparts.json')),starter=JSON.parse(fs.readFileSync('public/models/bodyparts-starter.json'));
+ const full=fs.readFileSync('public/models/bodyparts.bin'),small=fs.readFileSync('public/models/bodyparts-starter.bin');
+ assert.equal(starter.totalParts,original.parts.length);assert.equal(starter.bytes,small.length);assert.ok(small.length<full.length*.3);assert.equal(crypto.createHash('sha256').update(small).digest('hex'),starter.sha256);
+ for(const part of starter.parts){const src=original.parts.find(p=>p.id===part.id);assert.ok(src);assert.deepEqual(small.subarray(part.positions,part.positions+part.vertexCount*12),full.subarray(src.positions,src.positions+src.vertexCount*12));assert.deepEqual(small.subarray(part.indices,part.indices+part.indexCount*4),full.subarray(src.indices,src.indices+src.indexCount*4));}
+ assert.ok(starter.parts.some(p=>p.id==='FJ2810'));assert.ok(starter.parts.some(p=>p.name==='Right renal artery'));
+});

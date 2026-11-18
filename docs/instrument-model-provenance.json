@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-26",
+  "mode": "Turbo / Mesh / 100K / extra PBR maps off",
+  "assets": [
+    {
+      "instrumentId": "scalpel-handle",
+      "lux3dAssetId": 46698,
+      "referencePage": "https://www.swann-morton.com/product/123.php",
+      "referenceImage": "https://www.swann-morton.com/images/42218c985d5f0c196c008595890c5e34.png",
+      "sourceNote": "Turbo mesh; normalized steel handle",
+      "gamePath": "public/models/surgical_instruments/instruments/scalpel-handle.glb",
+      "bytes": 1728908,
+      "sha256": "024d9e9a999f95842e4e5f8967eb8926bbb954cca04d966d76002c578a1c7894"
+    },
+    {
+      "instrumentId": "scalpel-blade",
+      "lux3dAssetId": 46700,
+      "referencePage": "https://www.swann-morton.com/product/16.php",
+      "referenceImage": "https://www.swann-morton.com/images/4494509a687fcdabebb5b16b31e5d073.jpg",
+      "sourceNote": "Turbo mesh; mounting slot manually opened",
+      "gamePath": "public/models/surgical_instruments/instruments/scalpel-blade.glb",
+      "bytes": 1955708,
+      "sha256": "2dce8a87128bcb32199e1b257907279a25402d15b2a07747290d38692f42b78c"
+    },
+    {
+      "instrumentId": "mayo-scissors",
+      "lux3dAssetId": 46661,
+      "referencePage": "https://lux3d.aholo3d.cn/lux3d/home",
+      "referenceImage": "https://qhmtl-cos.kujiale.com/materialtexture/c39/835/d1a4169d340d86234a6b40d366f9f40a765bf5a.jpg",
+      "sourceNote": "Previously generated reference reused; Turbo mesh, three demonstration components",
+      "gamePath": "public/models/surgical_instruments/instruments/mayo-scissors.glb",
+      "bytes": 1936648,
+      "sha256": "8946566260e07efa3d593fee332881f2a4fe91d95159827e996367718ecacf60"
+    },
+    {
+      "instrumentId": "metzenbaum-scissors",
+      "lux3dAssetId": 46684,
+      "referencePage": "https://www.hartmann.info/de-de/produkte/op-bedarf/chirurgische-instrumente/peha%C2%AE-instrument-scheren/peha%C2%AE-instrument-metzenbaum-schere-gebogen",
+      "referenceImage": "https://cdn.hartmann.info/product/18098_43.jpg",
+      "sourceNote": "Turbo mesh; normalized, demonstration components",
+      "gamePath": "public/models/surgical_instruments/instruments/metzenbaum-scissors.glb",
+      "bytes": 1877704,
+      "sha256": "3c8664bb94e3feb59d56f207290f9fd7406ac85b266aa4baf65499eb08d39a4e"
+    },
+    {
+      "instrumentId": "mosquito-hemostat",
+      "lux3dAssetId": 46686,
+      "referencePage": "https://www.hartmann.info/en/products/operating-theater/surgical-instruments/peha%C2%AE-instrument-halsted-mosquito-forceps-anatomic-curved",
+      "referenceImage": "https://cdn.hartmann.info/product/18082_43.jpg",
+      "sourceNote": "AI working end retained; rings, stems and hinge manually rebuilt",
+      "gamePath": "public/models/surgical_instruments/instruments/mosquito-hemostat.glb",
+      "bytes": 279688,
+      "sha256": "a9b837dd1bfa6a6dc88c466f76b8e591182755bfac9e59de2b6878ef0f30c180"
+    },
+    {
+      "instrumentId": "kelly-hemostat",
+      "lux3dAssetId": 46694,
+      "referencePage": "https://www.sklarcorp.com/p/Sklar-Kelly-Hemostatic-Forceps-5-1-2-Straight/17-2055?view=products",
+      "referenceImage": "https://cdn.swell.store/sklar-staging/6a753297ad6c3000121ad610/7296b013dea2bc5f427bb8031e35cc71",
+      "sourceNote": "Turbo mesh; normalized, demonstration components",
+      "gamePath": "public/models/surgical_instruments/instruments/kelly-hemostat.glb",
+      "bytes": 1789640,
+      "sha256": "6c2a6c9c70f7b92c2e18ff1a0f5cdd0b250337f3ae43be1680006baa946836a5"
+    },
+    {
+      "instrumentId": "kocher-clamp",
+      "lux3dAssetId": 46706,
+      "referencePage": "https://www.economed.co.uk/products/kocher-artery-forceps-surgical-straight-14-cm",
+      "referenceImage": "https://www.economed.co.uk/cdn/shop/files/131147_hartmann_arterienklemme-1_6ef4e2ff-b3a8-4731-b5ea-a079fe5e5e85.jpg?v=1716295354",
+      "sourceNote": "Second AI working end retained; rings, stems and hinge manually rebuilt; illustrative tooth marker",
+      "gamePath": "public/models/surgical_instruments/instruments/kocher-clamp.glb",
+      "bytes": 546608,
+      "sha256": "c86cb3cbcb0e9f75d9c25304b1b4cfd840a891322e185c19e85a972f7ea1ff06"
+    },
+    {
+      "instrumentId": "adson-forceps",
+      "lux3dAssetId": 46690,
+      "referencePage": "https://www.hartmann.info/en/products/operating-theater/surgical-instruments/peha%C2%AE-instrument-adson-anatomic-forceps-straight",
+      "referenceImage": "https://cdn.hartmann.info/product/18087_43.jpg",
+      "sourceNote": "Turbo mesh; handle direction corrected",
+      "gamePath": "public/models/surgical_instruments/instruments/adson-forceps.glb",
+      "bytes": 1758352,
+      "sha256": "a6a1f83dce4289c9c9769ed90cf95ad7197efa2549f36e41b5df2447614ca812"
+    },
+    {
+      "instrumentId": "debakey-forceps",
+      "lux3dAssetId": 46692,
+      "referencePage": "https://www.hartmann.info/en/products/operating-theater/surgical-instruments/peha%C2%AE-instrument-debakey-forceps-straight",
+      "referenceImage": "https://cdn.hartmann.info/product/18088_43.jpg",
+      "sourceNote": "Turbo mesh; handle direction corrected",
+      "gamePath": "public/models/surgical_instruments/instruments/debakey-forceps.glb",
+      "bytes": 1792968,
+      "sha256": "82d732b686472632231f588144b955d65aed566159f15d1d6655cfb520fabb30"
+    },
+    {
+      "instrumentId": "mayo-hegar",
+      "lux3dAssetId": 46688,
+      "referencePage": "https://www.hartmann.info/en/products/operating-theater/surgical-instruments/peha%C2%AE-instrument-mayo-hegar-needle-holder",
+      "referenceImage": "https://cdn.hartmann.info/product/18080_43.jpg",
+      "sourceNote": "AI working end retained; rings, stems and hinge manually rebuilt",
+      "gamePath": "public/models/surgical_instruments/instruments/mayo-hegar.glb",
+      "bytes": 304788,
+      "sha256": "06f59cd8fc8ffdd32646f659b4d673864564d12dcd9f819a2d6d582f9d729e02"
+    },
+    {
+      "instrumentId": "langenbeck",
+      "lux3dAssetId": 46702,
+      "referencePage": "https://henryschein.com.au/instruments/restorative/cheek-retractors/retractor-langenbeck-bt326r-40-x-13-x-210mm",
+      "referenceImage": "https://henryschein.com.au/images/ProductImages/AE-BT326.jpg",
+      "sourceNote": "AI candidate rejected for forked geometry; reference-based manual mesh reconstruction",
+      "gamePath": "public/models/surgical_instruments/instruments/langenbeck.glb",
+      "bytes": 63456,
+      "sha256": "eee79c02680b5c92f9ae86b51f8b92ba8154702e45c64681b3e38bc5ccd133c3"
+    },
+    {
+      "instrumentId": "suction-tip",
+      "lux3dAssetId": 46704,
+      "referencePage": "https://www.sklarcorp.com/p/sklar-basic-pack-5-cs-10/50-2208",
+      "referenceImage": "https://cdn.swell.store/sklar-staging_test/69713e4acbe1260012330e35/2d6c3144afde9cde266f45ef4a43f618",
+      "sourceNote": "Turbo mesh; curved tube silhouette; lumen details remain approximate",
+      "gamePath": "public/models/surgical_instruments/instruments/suction-tip.glb",
+      "bytes": 1721544,
+      "sha256": "b3b531b44f89286da86c1c7670914f7e70e66257a5d4c6eda4de5b616d0adf30"
+    }
+  ],
+  "rejectedCandidates": [
+    {
+      "instrumentId": "kocher-clamp",
+      "lux3dAssetId": 46696,
+      "reason": "Malformed geometry from a transparent reference image"
+    },
+    {
+      "instrumentId": "langenbeck",
+      "lux3dAssetId": 46702,
+      "reason": "Forked silhouette; rebuilt manually instead"
+    }
+  ],
+  "quota": {
+    "creditsBeforeThisRound": 300,
+    "creditsAfterThisRound": 300,
+    "creditsSpent": 0,
+    "freeUsesBeforeThisRound": 27,
+    "freeUsesAfterThisRound": 15,
+    "newInstrumentTasks": 11,
+    "retryTasks": 1
+  },
+  "referenceRights": "Public product references are credited, not included as runtime assets; commercial reuse permissions have not been independently verified."
+}

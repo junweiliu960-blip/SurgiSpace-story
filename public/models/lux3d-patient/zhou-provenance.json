@@ -1,0 +1,19 @@
+{
+  "caseId": "CASE_APP_002",
+  "age": 32,
+  "sex": "male",
+  "source": "skin-base-lux.glb + operative-drape.glb",
+  "newPaidCharacterJobs": 0,
+  "changes": [
+    "mild torso taper (maximum 3.5 percent)",
+    "subtle abdominal profile adjustment",
+    "dark scalp hair and eyebrows",
+    "pubic-hair mesh hidden under drape",
+    "registered origin, height and head/feet anchors retained"
+  ],
+  "limitations": "Artistic identity variation of an existing mesh, not a newly generated or clinically age-validated face.",
+  "outputs": {
+    "zhou-supine.glb": "8d5a953ed236d0fc9dc92b1302cab29741f9d01923f3a867567610460c03baae",
+    "zhou-drape.glb": "19ce10c1130e4a37feed307e0c59be117cec10e8c41d3743f8b5aac531e1afea"
+  }
+}

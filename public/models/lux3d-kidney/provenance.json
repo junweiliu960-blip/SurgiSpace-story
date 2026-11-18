@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-11",
+  "provider": "Aholo Lux3D",
+  "region": "cn",
+  "version": "G1",
+  "requestedFaces": 100000,
+  "billing": "Four explicitly authorized generation tasks; API did not return actual credits charged. No additional retry tasks or top-ups.",
+  "tasks": [
+    {
+      "name": "01-covered",
+      "taskId": 6363391,
+      "prompt": "Educational realistic anatomical PBR 3D asset of the RIGHT kidney in an adult male. Single isolated organ assembly, no base, no text, no numbers, no labels, no floor, no background mesh, no hands, no tools, no blood. Right midlower kidney has large localized solid ochre mass near hilum. Not a surgical instruction. Right kidney partially concealed by surrounding yellow perirenal fat and thin pale renal fascia, an open window in fascia reveals only part of reddish brown kidney and part of mass, clearly layered tissue, kidney must not be fully exposed. Include a small amount of surrounding retracted tissue as organ context, not a human torso. Right adrenal superior and ureter descending. Designed as first partially covered surgical-field observation model.",
+      "bytes": 10307724,
+      "sha256": "a161651978fee10fc0df8549a28a97d2445a259a152c861af4f08e2bc2238d29",
+      "accepted": true,
+      "reason": "Accepted as an illustrative learning asset after visual inspection"
+    },
+    {
+      "name": "02-complete",
+      "taskId": 6362703,
+      "prompt": "An isolated detailed anatomical medical teaching 3D model of a human RIGHT kidney with renal hilum facing medially, realistic reddish brown renal capsule, a large ochre solid tumor at middle to lower pole adjacent to renal hilum, localized and no venous tumor thrombus. Include anatomically distinct red right renal artery posterior to short blue right renal vein, pale renal pelvis continuous into long ureter descending, separate golden normal adrenal gland above kidney. No text, no labels, no numbers, no floor, no stand, no extra organs, no hands, no instruments, no background geometry. Accurate anatomy, discrete identifiable structures, realistic PBR tissue materials, single kidney assembly. The tumor is substantial relative to kidney, approximately 8 cm mass in an adult kidney. Suitable for educational game interaction, whole exterior view not cutaway.",
+      "bytes": 9338328,
+      "sha256": "eae4798261a5ff1117fa69016710dec541aa552d407402c1272161be1eabd3d8",
+      "accepted": true,
+      "reason": "Accepted as an illustrative learning asset after visual inspection"
+    },
+    {
+      "name": "03-hilum",
+      "taskId": 6363398,
+      "prompt": "Educational realistic anatomical PBR 3D asset of the RIGHT kidney in an adult male. Single isolated organ assembly, no base, no text, no numbers, no labels, no floor, no background mesh, no hands, no tools, no blood. Right midlower kidney has large localized solid ochre mass near hilum. Not a surgical instruction. Close-up anatomical model focused on renal hilum and adjacent half of kidney: anatomically distinct red right renal artery posterior to short blue right renal vein, pale renal pelvis posterior to both continuous into long ureter descending. Include short segments of inferior vena cava and aorta to show connections: right renal artery passes behind IVC, right renal vein drains into IVC. Clearly visible separate vessel silhouettes and realistic short right vein. No veins branching into ureter, no vessel thrombus.",
+      "bytes": 10153020,
+      "sha256": "59caf35cd795217eec752d46a5663588fd3431c5826041d3242261b640339b04",
+      "accepted": false,
+      "reason": "Incorrect/inconsistent major-vessel arrangement; excluded from deployed assets"
+    },
+    {
+      "name": "04-cutaway",
+      "taskId": 6363405,
+      "prompt": "Educational realistic anatomical PBR 3D asset of the RIGHT kidney in an adult male. Single isolated organ assembly, no base, no text, no numbers, no labels, no floor, no background mesh, no hands, no tools, no blood. Right midlower kidney has large localized solid ochre mass near hilum. Not a surgical instruction. An educational longitudinal cutaway section through right kidney, open face shows thin outer cortex, medullary pyramids with papillae pointing toward minor calyces, minor calyces into major calyces and central pale renal pelvis continuous into descending ureter. Retain a thick half shell of reddish brown external kidney behind section. Substantial ochre tumor at midlower pole adjacent hilum distorts local tissue, not the entire kidney. Urinary collecting system separate from red and blue blood vessels. Show accurate distinguishable internal tissue layers, no excessive random holes.",
+      "bytes": 11030228,
+      "sha256": "309f66d46a4600451d4a2496f6f3c34e304d294cd2659ebaa597d8637da04fe1",
+      "accepted": true,
+      "reason": "Accepted as an illustrative learning asset after visual inspection"
+    }
+  ],
+  "delivery": "Three accepted GLBs; four views. View03 reuses view02 mesh with a dedicated camera.",
+  "limitations": [
+    "Generated single-mesh assemblies, not independently named anatomical submeshes.",
+    "Click hotspots and learning views do not change surgical state or perform arbitrary mesh cutting.",
+    "Shapes and tumor dimensions are illustrative, not patient-specific segmentation.",
+    "Not independently medically validated."
+  ]
+}

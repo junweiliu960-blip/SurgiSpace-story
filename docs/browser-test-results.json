@@ -1,0 +1,15 @@
+{
+  "passedNodes": 24,
+  "diagnosisFailure": true,
+  "surgicalRollback": true,
+  "pause": true,
+  "resume": true,
+  "assets": {
+    "bodyParts": 932,
+    "hraMeshes": 24,
+    "assetWarnings": [],
+    "triangles": 551282,
+    "drawCalls": 90
+  },
+  "errors": []
+}

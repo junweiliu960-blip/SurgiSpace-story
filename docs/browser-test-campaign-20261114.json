@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-14",
+  "nodeTests": 54,
+  "browserChecks": [
+    "investment news and gated intro",
+    "cutscene prop animation and skip advances once",
+    "appendix all eleven source questions and full recovery-rescue ending",
+    "appendix failure and surgical checkpoint survive reload",
+    "first case bridge and all original answers still complete into chapter two",
+    "mobile source options, scroll and 3D model view",
+    "modal input isolation and rejected-import preserves progress",
+    "WebGL unavailable retains playable appendix and operation"
+  ],
+  "pageErrors": [],
+  "note": "Desktop Chrome and mobile viewport emulation, not physical iOS or Android validation. Static build tested."
+}

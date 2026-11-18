@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {parseBackup} from '../src/local-storage.js';import {GameState} from '../src/game-state.js';
+test('local backup accepts legacy exports and preserves answered choices',()=>{const g=new GameState();g.start('full');g.log=[{id:'D01',result:'incorrect',optionId:'D01_2'}];const s=parseBackup(JSON.stringify({format:'surgispace-save',snapshot:g.snapshot()}));assert.deepEqual(s,g.snapshot());});
+test('local import rejects unrelated files, invalid versions and missing snapshots',()=>{for(const value of ['not json','{}',JSON.stringify({format:'surgispace-save',snapshot:{version:2}})])assert.throws(()=>parseBackup(value));});

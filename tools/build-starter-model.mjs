@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../public/models');
+const source=JSON.parse(fs.readFileSync(path.join(root,'bodyparts.json'),'utf8'));
+const binary=fs.readFileSync(path.join(root,'bodyparts.bin'));
+const selected=source.parts.filter(p=>['integumentary','sensory'].includes(p.system)||/^(Right renal artery|Right renal vein|Right ureter|Abdominal aorta|Inferior vena cava)$/i.test(p.name));
+const buffers=[];let offset=0;
+const parts=selected.map(p=>{const out={...p,positions:offset};const positions=binary.subarray(p.positions,p.positions+p.vertexCount*12);buffers.push(positions);offset+=positions.length;out.indices=offset;const indices=binary.subarray(p.indices,p.indices+p.indexCount*4);buffers.push(indices);offset+=indices.length;return out;});
+fs.writeFileSync(path.join(root,'bodyparts-starter.bin'),Buffer.concat(buffers));
+fs.writeFileSync(path.join(root,'bodyparts-starter.json'),JSON.stringify({...source,sourceSha256:source.sha256,sha256:createHash('sha256').update(Buffer.concat(buffers)).digest('hex'),parts,bytes:offset,totalParts:source.parts.length}));

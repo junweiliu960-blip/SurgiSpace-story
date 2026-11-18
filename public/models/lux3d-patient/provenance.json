@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-11",
+  "region": "cn",
+  "newPaidTasks": [
+    {
+      "name": "seated",
+      "taskId": 6371988,
+      "version": "G1-Turbo",
+      "kind": "image-to-3D"
+    },
+    {
+      "name": "supine",
+      "taskId": 6372192,
+      "version": "G1-Turbo",
+      "kind": "image-to-3D"
+    },
+    {
+      "name": "head",
+      "taskId": 6372437,
+      "version": "G1",
+      "kind": "image-to-3D"
+    },
+    {
+      "name": "skin-base",
+      "taskId": 6372493,
+      "version": "v3.0-standard",
+      "kind": "material-transfer"
+    },
+    {
+      "name": "internal-base",
+      "taskId": 6373085,
+      "version": "v3.0-standard",
+      "kind": "material-transfer"
+    }
+  ],
+  "actualCredits": "API did not return exact credits; use provider billing records",
+  "vascularReuse": {
+    "method": "BodyParts3D geometry retained; material colours sampled from existing Lux3D arterial and venous assets",
+    "reusedTasks": {
+      "renal-artery": 4635469,
+      "renal-vein": 4635472
+    },
+    "newVascularGenerationTasks": 0
+  },
+  "geometryAuthority": "BodyParts3D; 932 reference parts and original triangle coordinates retained",
+  "files": [
+    {
+      "file": "clinic-patient.glb",
+      "bytes": 4618068,
+      "sha256": "3c75f602d1563f8d76d5cfded84e7e9f18ba89ec420a2801823a738f68847ba0"
+    },
+    {
+      "file": "internal-base-lux.glb",
+      "bytes": 12816788,
+      "sha256": "2e86a4ceae8675b0bd20bf59dc8a1311a5595809a5d1e103034e05ff5f047268"
+    },
+    {
+      "file": "operative-drape.glb",
+      "bytes": 813492,
+      "sha256": "72c95819ddc9e008974d8483b86c7f6603504261a5a96e22f6981538c336c31d"
+    },
+    {
+      "file": "skin-base-lux.glb",
+      "bytes": 2137724,
+      "sha256": "9107e7901ea951c95db043c15a66cff6dc18f4dadc6a4e052adf18b53187a708"
+    },
+    {
+      "file": "vascular-base-lux.glb",
+      "bytes": 5223628,
+      "sha256": "f3ef289c5133861a373df059760d30944652cb326629437fbd8288deee1cfbc5"
+    }
+  ],
+  "geometryAudits": [
+    {
+      "batch": "skin-base",
+      "parts": 5,
+      "maxProviderCoordinateErrorMeters": 3.332000986233652e-08,
+      "outputCoordinatesSnappedToOriginal": true,
+      "unmatchedTriangles": 0,
+      "sourceTrianglesReconstructedForUv": 7045,
+      "geometryAuthority": "BodyParts3D",
+      "appearanceProvider": "Lux3D",
+      "bytes": 2137724,
+      "sha256": "9107e7901ea951c95db043c15a66cff6dc18f4dadc6a4e052adf18b53187a708"
+    },
+    {
+      "batch": "internal-base",
+      "parts": 248,
+      "maxProviderCoordinateErrorMeters": 8.869634621078148e-05,
+      "outputCoordinatesSnappedToOriginal": true,
+      "unmatchedTriangles": 0,
+      "sourceTrianglesReconstructedForUv": 38381,
+      "geometryAuthority": "BodyParts3D",
+      "appearanceProvider": "Lux3D",
+      "bytes": 12816788,
+      "sha256": "2e86a4ceae8675b0bd20bf59dc8a1311a5595809a5d1e103034e05ff5f047268"
+    }
+  ],
+  "inputImageGeneration": "Built-in imagegen; no Aholo credits used for reference images"
+}

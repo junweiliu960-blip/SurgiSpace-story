@@ -1,0 +1,71 @@
+{
+  "views": {
+    "01": {
+      "file": "01-covered.glb",
+      "taskId": 6363391
+    },
+    "02": {
+      "file": "02-complete.glb",
+      "taskId": 6362703
+    },
+    "03": {
+      "file": "02-complete.glb",
+      "taskId": 6362703,
+      "derived": "Same approved complete mesh, hilum camera close-up; separate candidate 6363398 rejected",
+      "camera": {
+        "position": [
+          0.3,
+          0.06,
+          0.75
+        ],
+        "target": [
+          0.13,
+          0.01,
+          0
+        ]
+      },
+      "hotspots": {
+        "ureter": [
+          0.18,
+          -0.12,
+          0.05
+        ]
+      }
+    },
+    "04": {
+      "file": "04-cutaway.glb",
+      "taskId": 6363405,
+      "hotspots": {
+        "tumor": [
+          -0.2,
+          -0.095,
+          0.07
+        ]
+      }
+    },
+    "artery": {
+      "file": "../lux3d-structures/renal-artery.glb"
+    },
+    "vein": {
+      "file": "../lux3d-structures/renal-vein.glb"
+    },
+    "ureter": {
+      "file": "04-cutaway.glb",
+      "camera": {
+        "position": [
+          0.25,
+          -0.08,
+          0.9
+        ],
+        "target": [
+          0.12,
+          -0.08,
+          0.05
+        ]
+      }
+    },
+    "adrenal": {
+      "file": "adrenal-closeup.glb"
+    }
+  }
+}

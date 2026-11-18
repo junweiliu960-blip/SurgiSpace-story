@@ -1,0 +1,5 @@
+{
+  "status": "updated to electron 45.2.3",
+  "audit": "npm install reported 0 vulnerabilities",
+  "scope": "development and packaged desktop dependencies"
+}

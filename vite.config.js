@@ -1,0 +1,1 @@
+export default {base:'./',build:{chunkSizeWarningLimit:800,rollupOptions:{input:{main:'index.html',animations:'animation-preview.html',rooms:'room-preview.html',presentation:'presentation-preview.html',renal:'renal-preview.html'}}}};
