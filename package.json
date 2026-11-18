@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node tools/dev.mjs",
     "build": "node tools/build.mjs",
-    "test": "node --test tests/player-identity.test.js tests/campaign.test.js tests/cinematic.test.js tests/game-state.test.js tests/player-sync.test.js tests/player-api.test.js tests/photo-layout.test.js tests/zhou-patient.test.js tests/appendix-assets.test.js tests/appendix-sequence.test.js tests/presentation.test.js tests/huang-assets.test.js"
+    "test": "node --test tests/player-identity.test.js tests/campaign.test.js tests/cinematic.test.js tests/game-state.test.js tests/player-sync.test.js tests/player-api.test.js tests/photo-layout.test.js tests/zhou-patient.test.js tests/appendix-assets.test.js tests/appendix-sequence.test.js tests/presentation.test.js tests/huang-assets.test.js tests/lin-assets.test.js"
   },
   "dependencies": {
     "three": "0.180.0"

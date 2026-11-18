@@ -1,0 +1,11 @@
+{
+  "provider": "Aholo Lux3D (reused asset)",
+  "source": "clinic-patient.glb",
+  "sourceSha256": "3c75f602d1563f8d76d5cfded84e7e9f18ba89ec420a2801823a738f68847ba0",
+  "outputSha256": "c6bccea69581cd02fb2e864f30800d66396fd31b57aaed4be22ebe6c9cdedd57",
+  "newPaidTasks": 0,
+  "removedChairFaces": 12957,
+  "handVerticesRelaxed": 1015,
+  "head": "Original detailed head preserved",
+  "cleanup": "Fused chair backrest, seat and legs removed; hand/wrist surface smoothed with original texture UVs retained."
+}
