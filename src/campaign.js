@@ -43,7 +43,7 @@ export function mountCampaign(api,{previewState=null}={}){
  function conversation(speaker,text){return `<div class="dialogue-inset"><section data-conversation-speaker="${esc(speaker)}"><small>${esc(speaker)}</small><p>${esc(text)}</p></section></div>`;}
  function linkConversation(box,speaker){if(!box)return;dialogueCleanup.push(connectDialogue(get('.campaign-stage'),box,{speaker:()=>speaker,anchor:name=>/电话|手机/.test(name)&&officePhone?officePhone.anchor():screenPoint(get('canvas'),stage?.speakerAnchor?.(name))}));}
  function currentStory(){return stories[bridgeResolve?'T06':state?.route];}
- function showStructure(name){dialog(name,`<p>${esc({'盲肠':'阑尾在此与大肠相连。核对根部关系，不因相邻而一并切除。','阑尾':'与盲肠相连的细管状结构。此模型表现本例炎症目标，末端封闭。','邻近小肠':'邻近正常肠管，需要辨认并保护；画面位置不能替代器官身份。','阑尾附着组织内供血连接':'附着组织内包含供血连接，与阑尾根部需要分别确认。'}[name]||'此为结构关系示意。返回不会推进题目。')}</p><p class="muted">结构模型为本项目制作的教学示意，不代表专业审核后的手术仿真。</p><button id="structure-back" class="primary">返回当前任务</button>`,(d,close)=>d.querySelector('button#structure-back').onclick=close);}
+ function showStructure(name){dialog(name,`<p>${esc({'盲肠':'阑尾在此与大肠相连。核对根部关系，不因相邻而一并切除。','阑尾':'与盲肠相连的细管状结构。此模型表现本例炎症目标，末端封闭。','邻近小肠':'邻近正常肠管，需要辨认并保护；画面位置不能替代器官身份。','阑尾附着组织内供血连接':'附着组织内包含供血连接，与阑尾根部需要分别确认。'}[name]||'此为结构关系示意。返回不会推进题目。')}</p><p class="muted">结构模型为本项目制作的教学示意。</p><button id="structure-back" class="primary">返回当前任务</button>`,(d,close)=>d.querySelector('button#structure-back').onclick=close);}
  function cue(action){if(state?.settings.muted||!['phone','door','note','tablet'].includes(action))return;try{const ctx=new AudioContext();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=action==='phone'?650:action==='door'?130:420;g.gain.setValueAtTime(.025,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.22);o.start();o.stop(ctx.currentTime+.22);o.onended=()=>ctx.close();}catch{}}
 function story(){
   const entry=currentStory();if(!entry)return;const l=entry.lines[state.line]||entry.lines[0];
@@ -86,10 +86,17 @@ function story(){
 
  function appendixResponse(){
   busy=false;const n=appendixNodes[state.appendixIndex],response=appendixFeedback[state.appendixIndex],diagnosis=n.phase==='diagnosis',patientReply=diagnosis&&/^周先生[:：]/.test(response),responseEpoch=epoch;
+  if(n.id==='AS06'){surgerySuccess();return;}
   const nextLabel=state.appendixIndex===4?'进入手术 →':diagnosis?'下一题 →':state.appendixIndex===10?'进入恢复与接应 →':'继续任务 →';
   const proceed=()=>{if(paused||modal||epoch!==responseEpoch)return;if(!advanceAppendix(state))return;persist();route();};
   const analysis=()=>{if(paused||modal)return;dialog(diagnosis?'问诊解析':'操作完成与解析',`${diagnosis?'':conversation('现场信息',response)}<h3>解析</h3><p>${esc(n.hint)}</p><button id="feedback-next" class="primary">${nextLabel}</button>`,(d,close)=>{if(!diagnosis){d.querySelector('.modal-close').hidden=true;d.addEventListener('cancel',e=>e.preventDefault());}d.querySelector('#feedback-next').onclick=()=>{close();proceed();};});};
   if(!diagnosis){analysis();return;}get('.appendix-card').hidden=true;const feedback=document.createElement('section');feedback.className=patientReply?'story-subtitles diagnosis-feedback':'appendix-card diagnosis-feedback';feedback.innerHTML=`<small>${patientReply?'周先生':'问诊记录已更新'}</small><p></p><div class="diagnosis-feedback-actions"><button class="primary" data-feedback-next>${nextLabel}</button><button class="secondary" data-feedback-analysis>查看解析</button></div>`;feedback.querySelector('p').textContent=patientReply?response.replace(/^周先生[:：]/,''):response;get('.campaign-stage').append(feedback);if(patientReply)linkConversation(feedback,'周先生');feedback.querySelector('[data-feedback-next]').onclick=proceed;feedback.querySelector('[data-feedback-analysis]').onclick=analysis;
+ }
+
+ function surgerySuccess(){
+  shell('手术成功！','days-later','<section class="days-later-card surgery-success-card"><p role="status">手术成功！</p><button id="surgery-success-next" class="quiet">进入恢复与接应 →</button></section>');
+  get('canvas').hidden=true;const successEpoch=epoch;
+  get('#surgery-success-next').onclick=()=>{if(paused||modal||epoch!==successEpoch)return;if(!advanceAppendix(state))return;persist();route();};
  }
 
  function appendixFailed(){const n=appendixNodes[state.appendixIndex],last=state.answers.at(-1),idx=n.options.findIndex(o=>o.id===last.optionId),reason=errorDetails[n.id][idx];shell('本次任务失败','clinic',`<section class="campaign-ending"><small>${esc(n.id)} · 决策后果</small><p id="ending-text"></p><button id="ending-complete" class="quiet">显示完整叙述</button><div id="ending-buttons" hidden><button id="appendix-retry" class="primary">${n.phase==='diagnosis'?'重新接诊':'回到本病例术前起点'}</button><button id="failure-review" class="secondary">回看所选与解析</button><small>${disclaimer}</small></div></section>`);get('canvas').hidden=true;const text=appendFailure(n,last.optionId).replace(n.hint,reason+'\n'+n.hint);let i=0;const finish=()=>{clearInterval(typing);get('#ending-text').textContent=text;get('#ending-buttons').hidden=false;get('#ending-complete').hidden=true;};typing=setInterval(()=>{if(paused||document.hidden)return;get('#ending-text').textContent=text.slice(0,++i);if(i>=text.length)finish();},28);get('#ending-complete').onclick=finish;get('#appendix-retry').onclick=()=>{retryAppendix(state);persist();appendix();};get('#failure-review').onclick=answerReview;}
