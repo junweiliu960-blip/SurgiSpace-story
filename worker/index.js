@@ -1,14 +1,32 @@
 import {validateCampaign} from '../src/campaign-state.js';
 
 const json=(value,status=200)=>Response.json(value,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
+const GUEST_COOKIE='surgispace_guest';
+async function visitor(request){
+ const account=request.headers.get('oai-authenticated-user-id');
+ // Existing signed-in players retain their original account save. Sign-in is optional.
+ if(account)return {id:account,name:request.headers.get('oai-authenticated-user-email')||'玩家',kind:'account'};
+ let token=request.headers.get('cookie')?.split(';').map(x=>x.trim()).find(x=>x.startsWith(GUEST_COOKIE+'='))?.slice(GUEST_COOKIE.length+1);
+ let cookie=null;
+ if(!/^[a-f0-9]{64}$/.test(token||'')){
+  if(request.method!=='GET')return null;
+  token=Array.from(crypto.getRandomValues(new Uint8Array(32)),x=>x.toString(16).padStart(2,'0')).join('');
+  cookie=GUEST_COOKIE+'='+token+'; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000'+(new URL(request.url).protocol==='https:'?'; Secure':'');
+ }
+ // Return only a hash as the display/storage ID; never expose the bearer cookie to JavaScript.
+ const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(token))),x=>x.toString(16).padStart(2,'0')).join('');
+ return {id:'guest-'+hash,name:'访客玩家',kind:'guest',cookie};
+}
 export async function handleProgress(request,env){
- const user=request.headers.get('oai-authenticated-user-id');
- if(!user)return json({message:'请先登录后读取游戏进度。'},401);
- const key='players/'+encodeURIComponent(user)+'/campaign.json';
+ const identity=await visitor(request);
+ if(!identity)return json({message:'访客存档连接已失效，请刷新页面重新连接。'},401);
+ const {cookie,...user}=identity;
+ const reply=(value,status=200)=>{const response=json(value,status);if(cookie)response.headers.set('Set-Cookie',cookie);return response;};
+ const key='players/'+encodeURIComponent(user.id)+'/campaign.json';
  if(request.method==='GET'){
   const object=await env.BUCKET.get(key);
   const data=object?await object.json():{revision:0,snapshot:null,updatedAt:null};
-  return json({...data,user:{id:user,name:request.headers.get('oai-authenticated-user-email')||'玩家'}});
+  return reply({...data,user});
  }
  if(request.method!=='PUT')return json({message:'不支持此操作'},405);
  if(request.headers.get('Origin')!==new URL(request.url).origin)return json({message:'请求来源不符'},403);
