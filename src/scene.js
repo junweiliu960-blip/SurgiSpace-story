@@ -1,6 +1,6 @@
 import {fitPatientToBed,addBedContactShadow} from './bed-registration.js';
 import {createCartoonPatient} from './cartoon-patient.js';
-import {normalizedPhotoBounds,placePhotoObject} from './photo-layout.js';
+import {normalizedPhotoBounds,placePhotoObject,seatClinicPatient} from './photo-layout.js';
 import {renalRegistration as renalReg} from './renal-registration.js';
 import * as T from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
@@ -161,7 +161,7 @@ export async function createScene(canvas,onStatus,options={}){
   canvas.closest('.viewport')?.classList.toggle('photo-detail',!photoOverview);
   if(photoOverview){
    controls.enabled=false;camera.clearViewOffset();camera.zoom=1;camera.up.set(0,1,0);camera.updateProjectionMatrix();
-   if(inClinic){camera.position.set(0,1.2,4);camera.lookAt(0,1.2,0);clinic.visible=clinicLook!=='computer';if(clinicActor)placePhotoObject(clinicActor,[.63,.88],.53,camera,canvas,{sourceHeight:1.58});}
+   if(inClinic){camera.position.set(0,1.2,4);camera.lookAt(0,1.2,0);clinic.visible=clinicLook!=='computer';if(clinicActor)seatClinicPatient(clinicActor,camera,canvas);}
    else{fitPatientToBed(camera,canvas);}
   }else{camera.clearViewOffset();camera.zoom=1;camera.up.set(0,1,0);camera.updateProjectionMatrix();scene.background=new T.Color('#102b2a');controls.enabled=cameraInteraction&&!paused;}
   if(photoOverview)scene.background=null;

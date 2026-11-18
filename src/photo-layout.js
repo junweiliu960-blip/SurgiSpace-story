@@ -31,6 +31,12 @@ export function placePhotoObject(object,uv,height,camera,canvas,{sourceHeight=1,
  const worldHeight=2*Math.abs(camera.position.z)*Math.tan(camera.fov*Math.PI/360)/camera.zoom;
  const scale=height*r.height/h*worldHeight/sourceHeight;object.scale.setScalar(scale);object.position.y-=baseY*scale;
 }
+// The seated body's hip underside meets the existing cushion; its soles meet
+// the floor in front of that chair. Both points scale with the room artwork.
+export function seatClinicPatient(object,camera,canvas){
+ object.rotation.y=-.80;
+ placePhotoObject(object,[.655,.90],.55,camera,canvas,{sourceHeight:1.58});
+}
 export function fitCameraToPhoto(camera,canvas,a,b,uvA,uvB){
  const w=canvas.clientWidth||1,h=canvas.clientHeight||1,r=photoRect(w,h);
  camera.clearViewOffset();camera.zoom=1;camera.updateProjectionMatrix();camera.updateMatrixWorld();
