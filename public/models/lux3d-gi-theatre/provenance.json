@@ -1,0 +1,38 @@
+{
+  "provider": "Aholo Lux3D",
+  "version": "G1",
+  "newGenerationTasks": 2,
+  "assets": {
+    "bed": {
+      "taskId": 8372478,
+      "faceCountRequested": 100000,
+      "sourceSha256": "54959d2b096227ab1fef628bce5fb6e178cb7526ce598f2f952a69ac02dcc444",
+      "outputSha256": "a2e5ec1ac61d4542f4e38b09ca79063ca92306d2b700fd3eb92405676f333c21",
+      "referenceSha256": "ef88c0e107c9f8ca30580aa0ee1c8ad9327acc6228e954c8f77a8fcfc57fd3cc",
+      "bytes": 16431092
+    },
+    "gi": {
+      "taskId": 8372480,
+      "faceCountRequested": 100000,
+      "sourceSha256": "3a5be8870177a74d2d873bf99e197fb60241e4fda4b60e98bdf2d6cfec70cea1",
+      "outputSha256": "3a5be8870177a74d2d873bf99e197fb60241e4fda4b60e98bdf2d6cfec70cea1",
+      "referenceSha256": "b7afe8168cda4ea52b16ad0274e33d34f7e95d0e657cf5aa648ee6f7026b2de1",
+      "bytes": 9294008
+    }
+  },
+  "reusedHead": {
+    "source": "models/lux3d-zhou/zhou-ill.glb",
+    "sha256": "34a6f2b0379abe6d9c4df0e61ad8b2fa662cae00f1145fb98ea13c533863e9b6"
+  },
+  "bedRegistration": {
+    "width": 0.92,
+    "length": 2.12,
+    "height": 1.15,
+    "head": "negative Z in game",
+    "base": "Y=0"
+  },
+  "localDetail": {
+    "source": "models/lux3d-appendix/02-complete.glb",
+    "reuse": true
+  }
+}
