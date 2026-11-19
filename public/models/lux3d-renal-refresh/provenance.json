@@ -1,0 +1,63 @@
+{
+  "provider": "Aholo Lux3D",
+  "version": "G1",
+  "newGenerationTasks": 3,
+  "assets": {
+    "bed": {
+      "taskId": 8376822,
+      "sourceSha256": "551f503413a0b9b0c5e7397d57fa38fbf19acc66a78607fc05b04162a39ca1b7",
+      "outputSha256": "bcb9bf901a936f800f96d11fc9c40039f8e7f0ffa94c1ced0c463642ec49b33b",
+      "referenceSha256": "c4fd0a9709e84de91c86fd4ca2b1e5f5a8c0c76869ed009d4b29da437b34ba5e",
+      "bytes": 12249220
+    },
+    "kidney": {
+      "taskId": 8376895,
+      "sourceSha256": "3a32b3889d13181fbb5110efede03d24eb2cc444bb686f6de8870467a1724a35",
+      "outputSha256": "3a32b3889d13181fbb5110efede03d24eb2cc444bb686f6de8870467a1724a35",
+      "referenceSha256": "e50f352e399dba947336fa38c21c09186aec949d9f6134d6ded4657914a64bd7",
+      "bytes": 9796320
+    },
+    "cutaway": {
+      "taskId": 8376948,
+      "sourceSha256": "812ae52d03f2ffa6e856d066562d76b5b3ef7854467c1bf825a1b7b57f97d577",
+      "outputSha256": "812ae52d03f2ffa6e856d066562d76b5b3ef7854467c1bf825a1b7b57f97d577",
+      "referenceSha256": "799179362e5297ba59e811ac8f00fefef62b673271ffda68fbfe79fab1a4cf61",
+      "bytes": 10031304
+    }
+  },
+  "bedRegistration": {
+    "widthIncludingArmSupports": 1.24,
+    "length": 2.12,
+    "height": 1.15,
+    "head": "negative Z",
+    "baseY": 0
+  },
+  "renalPortsNormalized": {
+    "artery": [
+      0.11526473611593246,
+      0.028772935271263123,
+      -0.028924420475959778
+    ],
+    "vein": [
+      0.1528337150812149,
+      0.052773088216781616,
+      0.005373571068048477
+    ]
+  },
+  "cutawayPortsNormalized": {
+    "artery": [
+      0.11526408791542053,
+      0.028772935271263123,
+      -0.028924420475959778
+    ],
+    "vein": [
+      0.15283364057540894,
+      0.052773088216781616,
+      0.005373571068048477
+    ]
+  },
+  "vascularAuthority": "Existing BodyParts3D abdominal aorta and inferior vena cava; generated artery/vein stems trimmed and bridged to registered ports.",
+  "preservedAdrenal": "Separate existing Lux3D adrenal asset",
+  "registeredCutawaySha256": "5c50e51e0bf26ce73e58651018aeb3b22b7edc963446c6e327c30db7fea9f62f",
+  "registeredKidneySha256": "8b200515886507b46e44fd726f298c4ff02eb3df3faa65d95d4eac7743b43a7f"
+}

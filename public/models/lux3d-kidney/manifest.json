@@ -5,13 +5,13 @@
       "taskId": 6363391
     },
     "02": {
-      "file": "02-complete.glb",
-      "taskId": 6362703
+      "file": "../lux3d-renal-refresh/kidney.glb",
+      "taskId": 8376895
     },
     "03": {
-      "file": "02-complete.glb",
-      "taskId": 6362703,
-      "derived": "Same approved complete mesh, hilum camera close-up; separate candidate 6363398 rejected",
+      "file": "../lux3d-renal-refresh/kidney.glb",
+      "taskId": 8376895,
+      "derived": "New approved Lux3D kidney, hilum close-up camera",
       "camera": {
         "position": [
           0.3,
@@ -33,8 +33,8 @@
       }
     },
     "04": {
-      "file": "04-cutaway.glb",
-      "taskId": 6363405,
+      "file": "../lux3d-renal-refresh/cutaway.glb",
+      "taskId": 8376948,
       "hotspots": {
         "tumor": [
           -0.2,

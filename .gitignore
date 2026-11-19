@@ -12,3 +12,8 @@ dist/
 *.pem
 *.key
 __pycache__/
+
+# Local Cloudflare state and credentials
+.wrangler/
+.dev.vars
+.dev.vars.*

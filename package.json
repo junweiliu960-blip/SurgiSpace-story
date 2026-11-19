@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "node tools/dev.mjs",
     "build": "node tools/build.mjs",
-    "test": "node --test tests/player-identity.test.js tests/campaign.test.js tests/cinematic.test.js tests/game-state.test.js tests/player-sync.test.js tests/player-api.test.js tests/photo-layout.test.js tests/zhou-patient.test.js tests/appendix-assets.test.js tests/appendix-sequence.test.js tests/presentation.test.js tests/huang-assets.test.js tests/lin-assets.test.js tests/zhou-lux3d-assets.test.js tests/gi-theatre.test.js"
+    "test": "node --test tests/player-identity.test.js tests/campaign.test.js tests/cinematic.test.js tests/game-state.test.js tests/player-sync.test.js tests/player-api.test.js tests/photo-layout.test.js tests/zhou-patient.test.js tests/appendix-assets.test.js tests/appendix-sequence.test.js tests/presentation.test.js tests/huang-assets.test.js tests/lin-assets.test.js tests/zhou-lux3d-assets.test.js tests/gi-theatre.test.js tests/cloudflare-public.test.js tests/renal-refresh.test.js",
+    "deploy:cloudflare": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "three": "0.180.0"
   },
   "devDependencies": {
-    "vite": "7.3.7"
+    "vite": "7.3.7",
+    "wrangler": "4.158.0"
   }
 }

@@ -5,6 +5,6 @@ if(result.status!==0)process.exit(result.status??1);
 mkdirSync('dist/server',{recursive:true});mkdirSync('dist/.openai',{recursive:true});
 // A self-contained Worker ESM, with the same save validator as the game.
 const built=await import('vite');
-await built.build({configFile:false,build:{outDir:'dist/server',emptyOutDir:false,lib:{entry:'worker/index.js',formats:['es'],fileName:()=> 'index.js'},minify:true},logLevel:'warn'});
+await built.build({configFile:false,publicDir:false,build:{outDir:'dist/server',emptyOutDir:false,lib:{entry:'worker/index.js',formats:['es'],fileName:()=> 'index.js'},minify:true},logLevel:'warn'});
 writeFileSync('dist/.openai/hosting.json',readFileSync('.openai/hosting.json'));
 console.log('Worker + client + account cloud saves built.');
