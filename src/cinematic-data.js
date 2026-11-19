@@ -28,9 +28,9 @@ function base(id){const s={id,shot:'',camera:{p:[2.8,1.95,3.6],t:[.6,1.15,-.5]},
  if(id==='T02')s.props.paper.kind='folder';
  if(id==='T03'){s.camera={p:[2.6,1.75,3.6],t:[.0,1.0,-.7]};s.actors.huang.pos=[-.55,0,-.6];s.actors.greeter2.visible=s.actors.greeter3.visible=true;s.actors.zhou={...person([.65,-.24,-1.0]),sit:1};s.props.bag={owner:'doctor',pos:[0,0,0],visible:true};s.vehicle=true;}
  if(id==='T04'){s.vehicle=true;s.actors.huang.visible=false;s.actors.zhou={...person([.65,-.24,-1]),sit:1};s.camera={p:[.35,1.42,.36],t:[-.25,1.28,-1.2]};s.road=1;}
- if(id==='T05'||id==='T07'){s.linVisible=true;s.actors.zhou.visible=false;if(id==='T05'){s.eye=0;s.blur=1;}else{s.actors.family.visible=true;s.props.paper={owner:'doctor',pos:[0,0,0],visible:true,kind:'followup'};}}
+ if(id==='T05'||id==='T07'){s.linVisible=true;s.actors.zhou.visible=false;if(id==='T05'){s.eye=0;s.blur=1;}else{s.actors.family.visible=false;s.props.paper={owner:'doctor',pos:[0,0,0],visible:true,kind:'followup'};}}
  if(id==='T06'||id==='FU2'){for(const a of Object.values(s.actors))a.visible=false;s.actors.nurse.visible=true;s.actors.nurse.pos=[-.6,0,-.1];s.camera={p:[2.1,2.1,2.9],t:[0,.95,-.15]};s.bedOffset=id==='T06'?.85:0;s.props.paper={owner:'doctor',pos:[0,0,0],visible:true,kind:'record'};}
- if(id==='T08'){s.actors.huang.visible=false;s.actors.zhou={...person([1.3,0,-1.85]),gesture:'pain',expression:'pain'};s.props.paper={owner:'zhou',pos:[0,0,0],visible:true,kind:'note'};}
+ if(id==='T08'){s.actors.huang.visible=false;s.actors.zhou={...person([1.3,0,-1.85]),gesture:'pain',expression:'pain'};s.props.paper={owner:'zhou',pos:[0,0,0],visible:false,kind:'note'};}
  if(id==='T09'){for(const a of Object.values(s.actors))a.visible=false;s.actors.zhou={...person([.65,-.20,-1.2]),sit:1,expression:'tired'};s.actors.nurse={...person([.65,0,-1.8]),gesture:'push'};s.actors.police=person([-.65,0,-.9]);s.props.badge.visible=true;s.camera={p:[2.8,1.85,3.5],t:[.2,1,-.5]};}
  return s;
 }
@@ -59,15 +59,15 @@ function apply(s,line,time){const id=s.id,clip=getCinematicClip(id,line),t=clamp
  }
  if(id==='T06'){s.props.paper.kind='record';s.actors.nurse.gesture='receive';if(line===0)s.insert='door';if(line===1){s.insert='record';s.handVisible=true;s.hand=[-.08,.97,.3];s.props.paper.owner=t<2.1?'handoff':'nurse';s.props.paper.pos=[-.08,.95,.3];s.folder=q(0,1.1);cam([.6,1.46,1.4],[-.2,1.12,.1],0,1.2);}if(line===2){s.insert='';s.props.paper.visible=false;s.handVisible=false;s.bedOffset=.85*(1-q(0,4));s.actors.nurse.pos=[-.55,0,s.bedOffset-.2];s.actors.nurse.walk=t<4?t*7:0;s.actors.nurse.gesture='push';cam([2.1,2.1,2.9],[0,.95,-.15],0,3);}}
  if(id==='T07'){
-  if(line===0){s.calendar=q(0,2);s.light=.65+.35*q(0,3.5);move('family',[1.3,0,-2.5],1.4,3.6);s.actors.family.yaw=Math.PI;s.actors.family.visible=t<3.6;s.actors.huang.pos=[1.25,0,-1.65];s.insert=t<1.8?'calendar':'';}
+  if(line===0){s.calendar=q(0,2);s.light=.65+.35*q(0,3.5);move('family',[1.3,0,-2.5],1.4,3.6);s.actors.family.yaw=Math.PI;s.actors.family.visible=false;s.actors.huang.pos=[1.25,0,-1.65];s.insert=t<1.8?'calendar':'';}
   if(line===1){s.props.paper.kind='followup';s.props.paper.owner='desk';paper([.10,.827,.1],[.50,.827,-.05],.4,2.0);s.handVisible=true;s.handStyle='doctor';s.hand=[.10+.40*q(.4,2),.86,.10-.15*q(.4,2)];}
   if(line>=2&&line<=4){s.handVisible=false;s.actors.huang.gesture=line===4?'block':'speak';move('huang',[1.05,0,-1.25],0,1.8);}
   if(line===5){s.insert='ticket';s.handVisible=true;s.handStyle='doctor';s.hand=[.12,.86,.12];s.props.paper.kind='ticket';paper([.12,.85,.12],[.14,.815,.15],.4,1.3);s.hand=mix([.12,.86,.12],[.10,.73,.30],q(1.2,2.5));s.door=.6*(1-q(2.5,4));cam([.5,1.22,.72],[.14,.82,.1],.5,2.5);}
  }
  if(id==='T08'){
-  if(line===0){move('zhou',[.8,-.20,-.6],0,4.2);s.actors.zhou.sit=q(2.8,4.6);s.actors.zhou.lean=.13;s.actors.zhou.gesture='pain';s.actors.zhou.expression='pain';}
-  if(line===1){s.actors.zhou.look=-.5*Math.sin(q(0,1.8)*Math.PI);s.actors.zhou.gesture='note';s.props.paper.owner='desk';s.props.paper.pos=mix([.48,.827,-.12],[.0,.827,.17],q(1.6,3.8));s.handVisible=t>3.6;s.hand=[0,.85,.17];s.insert='note';cam([.45,1.28,.72],[.1,.83,.05],1.3,2.5);}
-  if(line===2){s.insert='note-read';s.props.paper.owner='doctor';s.handVisible=true;s.hand=[0,.86,.17];s.actors.zhou.gesture='pain';cam([.45,1.28,.72],[.1,.83,.05]);}
+  if(line===0){move('zhou',[.8,-.20,-.6],0,4.2);s.actors.zhou.sit=1;s.actors.zhou.lean=.13;s.actors.zhou.gesture='pain';s.actors.zhou.expression='pain';}
+  if(line===1){s.props.paper.visible=true;s.actors.zhou.look=-.5*Math.sin(q(0,1.8)*Math.PI);s.actors.zhou.gesture='note';s.props.paper.owner='desk';s.props.paper.pos=mix([.48,.827,-.12],[.0,.827,.17],q(1.6,3.8));s.handVisible=t>3.6;s.hand=[0,.85,.17];s.insert='note';cam([.45,1.28,.72],[.1,.83,.05],1.3,2.5);}
+  if(line===2){s.props.paper.visible=true;s.insert='note-read';s.props.paper.owner='doctor';s.handVisible=true;s.hand=[0,.86,.17];s.actors.zhou.gesture='pain';cam([.45,1.28,.72],[.1,.83,.05]);}
   if(line===3){s.handVisible=false;s.props.paper.visible=false;s.memory=q(.7,1.0)*(1-q(1.7,2.1));s.insert=t>.7&&t<2.1?'memory':'';cam([2.5,1.8,3.1],[.8,1.2,-.6],0,1.5);}
   if(line===4){s.insert='';s.memory=0;s.props.paper.visible=false;s.actors.zhou.gesture='pain';}
  }
@@ -79,6 +79,7 @@ function apply(s,line,time){const id=s.id,clip=getCinematicClip(id,line),t=clamp
   if(line===4){s.vehicle=true;s.insert='vehicle';s.carDoor=q(.1,1.7)*(1-q(5.0,6.6));s.actors.police.gesture='guide';s.actors.nurse.gesture='push';s.actors.zhou.visible=t<3.5;s.actors.nurse.visible=t<3.5;cam([1.35,1.48,.85],[.5,1.1,-.9],0,2);if(t>3.3){s.black=.9*Math.sin(q(3.3,4.4)*Math.PI);s.camera.p=mix([1.35,1.48,.85],[.35,1.42,.36],q(3.6,4.4));s.camera.t=mix([.5,1.1,-.9],[-.25,1.28,-1.2],q(3.6,4.4));}if(t>4.5){s.actors.police.visible=false;s.actors.zhou.visible=false;s.actors.nurse.visible=false;}}
   if(line>=5){s.insert='vehicle';s.black=0;s.vehicle=true;s.actors.police.visible=false;s.actors.nurse.visible=false;s.actors.zhou.visible=false;s.camera={p:[.35,1.42,.36],t:[-.25,1.28,-1.2]};s.firstPerson=true;s.relief=line===6?q(0,2.5):0;s.handVisible=true;s.hand=[0,.8,.2];}
  }
+ for(const key of ['police','nurse','family','greeter2','greeter3'])s.actors[key].visible=false;
  return s;
 }
 export function sampleCutscene(id,line,time){getCinematicClip(id,line);let s=base(id);for(let i=0;i<line;i++)s=apply(s,i,cinematicClips[id][i].duration);return apply(s,line,time);}

@@ -3,14 +3,14 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 // Both stage systems use this single local character asset. No runtime API calls.
 export function attachLuxHuang(parent,{exclude=[],isDisposed=()=>false}={}){
- const fallback=[];parent.traverse(o=>{if(o.isMesh&&!exclude.some(p=>{for(let a=o;a;a=a.parent)if(a===p)return true;return false;}))fallback.push(o);});
+ const fallback=[];parent.traverse(o=>{if(o.isMesh&&!exclude.some(p=>{for(let a=o;a;a=a.parent)if(a===p)return true;return false;})){fallback.push(o);o.visible=false;}});
  const visual=new T.Group();visual.name='XiaoHuang_Lux3D';parent.add(visual);
  let loaded=false,error=null,model,head,leftHand;const bones=new Map(),rest=new Map();
  const ready=new Promise(resolve=>new GLTFLoader().load(new URL(import.meta.env.BASE_URL+'models/lux3d-huang/huang-rigged.glb',document.baseURI).href,g=>{
   if(isDisposed()){release(g.scene);resolve(false);return;}
   model=g.scene;model.updateMatrixWorld(true);
   const box=new T.Box3().setFromObject(model),size=box.getSize(new T.Vector3()),centre=box.getCenter(new T.Vector3());
-  const normalizer=new T.Group();normalizer.scale.setScalar(1.70/size.y);model.position.sub(new T.Vector3(centre.x,box.min.y,centre.z));normalizer.add(model);visual.add(normalizer);
+  const normalizer=new T.Group();normalizer.scale.setScalar(1.90/size.y);model.position.sub(new T.Vector3(centre.x,box.min.y,centre.z));normalizer.add(model);visual.add(normalizer);
   model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;o.frustumCulled=false;}if(o.isBone){bones.set(o.name.toLowerCase().replace(/[^a-z0-9]/g,''),o);rest.set(o,o.quaternion.clone());}});
   const find=(...names)=>{for(const name of names)for(const [key,bone]of bones)if(key.endsWith(name))return bone;};
   head=find('head');leftHand=find('lefthand','handl','lhand');
@@ -35,7 +35,7 @@ export function attachLuxHuang(parent,{exclude=[],isDisposed=()=>false}={}){
    aim(fore,hand,waving?[Math.sin(time*3)*.15,1,.1]:presenting?[sign*.05,-.10,1]:[sign*.06,-1,.08]);
    const stride=Math.sin(walk+(sign===1?0:Math.PI));turn(bone(side+'upleg'),stride*.22);turn(bone(side+'leg'),Math.max(0,-stride)*.22);
   }
- },headPosition(){if(!loaded)return null;parent.updateWorldMatrix(true,true);return head?head.getWorldPosition(new T.Vector3()):parent.localToWorld(new T.Vector3(0,1.60,0));},handPosition(){parent.updateWorldMatrix(true,true);return loaded&&leftHand?leftHand.getWorldPosition(new T.Vector3()):null;},hold(object){
+ },headPosition(){if(!loaded)return null;parent.updateWorldMatrix(true,true);return head?head.getWorldPosition(new T.Vector3()):parent.localToWorld(new T.Vector3(0,1.80,0));},handPosition(){parent.updateWorldMatrix(true,true);return loaded&&leftHand?leftHand.getWorldPosition(new T.Vector3()):null;},hold(object){
   if(!loaded||!leftHand||!object.visible)return;parent.updateWorldMatrix(true,true);
   const position=leftHand.getWorldPosition(new T.Vector3()),scale=parent.getWorldScale(new T.Vector3()).y;
   position.add(new T.Vector3(0,.07,.045).applyQuaternion(parent.getWorldQuaternion(new T.Quaternion())).multiplyScalar(scale));
