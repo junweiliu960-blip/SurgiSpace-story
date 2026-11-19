@@ -49,4 +49,4 @@ body:has(dialog[open]) .scene-screen,body:has(dialog[open]) .office-phone-screen
 /* Airport dialogue appears immediately at the centre, without popup motion. */
 .stage-transition.airport-direct .transition-copy{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;width:min(680px,calc(100% - 32px));text-align:center}.stage-transition.airport-direct .transition-copy p{min-height:0}.stage-transition.airport-direct .transition-copy,.stage-transition.airport-direct .transition-copy *{animation:none!important;transition:none!important}
 
-#campaign-layer .campaign-stage.stage-or.renal-new-ensemble{background-image:url('/images/backgrounds/or-retrofuture-renal-clear.png')!important}
+.campaign-stage.stage-or.renal-new-ensemble{background-image:url('/images/backgrounds/or-retrofuture-renal-clear.png')!important}
